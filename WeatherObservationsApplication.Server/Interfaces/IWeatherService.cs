@@ -1,7 +1,9 @@
-﻿namespace WeatherObservationsApplication.Server.Interfaces
+﻿using WeatherObservationsApplication.Server.Models;
+
+namespace WeatherObservationsApplication.Server.Interfaces
 {
     public interface IWeatherService
     {
-        Task<string> GetWeatherAsync(string location);
+        Task<ServiceResponse> GetWeatherAsync(string location);
     }
 }
