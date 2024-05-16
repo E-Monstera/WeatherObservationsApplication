@@ -17,3 +17,13 @@ th, td {
     padding-left: 1rem;
     padding-right: 1rem;
 }
+
+.form-element {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 10px;
+}
+
+.form-element-spacing {
+    margin-bottom: 10px;
+}
