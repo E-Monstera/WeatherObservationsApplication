@@ -46,7 +46,7 @@ function App() {
 
     return (
         <>
-            <h1>Nice Title</h1>
+            <h1>Weather Observations</h1>
             <div>
                 <form onSubmit={async () => await handleSubmit()}>
                     <label htmlFor='location'>Please enter a location:</label>
