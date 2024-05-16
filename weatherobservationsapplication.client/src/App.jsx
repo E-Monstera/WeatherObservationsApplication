@@ -57,24 +57,24 @@ function App() {
             <div>
                 {isLoading && <h1>Loading....</h1>}
                 {isError && <h1>Error encountered. Please try again.</h1>}
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Date</th>
-                            <th>High Temperature</th>
-                            <th>Low Temperature</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {weatherData.map(data =>
-                            <tr key={data.Date}>
-                                <td>{data.Date}</td>
-                                <td>{data.HighTemperature}</td>
-                                <td>{data.LowTemperature}</td>
-                            </tr>
-                        )}
-                    </tbody>
-                </table>
+                {/*<table>*/}
+                {/*    <thead>*/}
+                {/*        <tr>*/}
+                {/*            <th>Date</th>*/}
+                {/*            <th>High Temperature</th>*/}
+                {/*            <th>Low Temperature</th>*/}
+                {/*        </tr>*/}
+                {/*    </thead>*/}
+                {/*    <tbody>*/}
+                {/*        {weatherData.map(data =>*/}
+                {/*            <tr key={data.Date}>*/}
+                {/*                <td>{data.Date}</td>*/}
+                {/*                <td>{data.HighTemperature}</td>*/}
+                {/*                <td>{data.LowTemperature}</td>*/}
+                {/*            </tr>*/}
+                {/*        )}*/}
+                {/*    </tbody>*/}
+                {/*</table>*/}
 
 
             </div>
