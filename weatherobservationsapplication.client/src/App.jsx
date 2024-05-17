@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import './App.css';
 import { GetWeather } from '../services/WeatherService'
+import { format } from 'date-fns';
 
 function App() {
 
@@ -38,9 +39,7 @@ function App() {
         //As I'm just getting back to working with Javascript, I still need a refresher on the syntax
         //for handling this in Javascript
         try {
-            console.log(`Attempting to grab weather for ${location}`)
             var res = await GetWeather(location);
-            console.log(`Returning from GetWeather. Error ${res.errorMessage}, data: ${res.data}`)
             setWeatherData(res.data);
             setError(res.errorMessage);
         } catch (e) {
@@ -50,6 +49,18 @@ function App() {
         }
 
 
+    }
+
+    const formatDate = (date) =>
+    {
+        if (date === undefined) {
+            return "";
+        }
+        let year = Number(date.substring(0, 4));
+        let month = Number(date.substring(5, 7));
+        let day = Number(date.substring(8, 10));
+
+        return format(new Date(year, month - 1, day), 'yyyy/MM/dd');
     }
 
 
@@ -78,19 +89,19 @@ function App() {
                 <table>
                     <thead>
                         <tr>
-                            <th>Date</th>
-                            <th>High Temperature</th>
-                            <th>Low Temperature</th>
+                            <th className='weather-text'>Date</th>
+                            <th className='weather-text'>High Temperature</th>
+                            <th className='weather-text'>Low Temperature</th>
                         </tr>
                     </thead>
                     <tbody>
-                        {weatherData.Map(data =>
-                            <tr key={data.Date}>
-                                <td>{data.Date}</td>
-                                <td>{data.HighTemperature}</td>
-                                <td>{data.LowTemperature}</td>
-                            </tr>
-                        )}
+                            {weatherData.map(data => (
+                                <tr key={data.date}>
+                                    <td className='weather-text'>{formatDate(data.date)}</td>
+                                    <td className='weather-text'>{data.highTemperature}</td>
+                                    <td className= 'weather-text' >{data.lowTemperature}</td>
+                                </tr>
+                            ))}
                     </tbody>
                 </table>
                 ) : <></>}

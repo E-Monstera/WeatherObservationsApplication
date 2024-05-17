@@ -18,6 +18,10 @@ th, td {
     padding-right: 1rem;
 }
 
+.weather-text {
+    color:black;
+}
+
 .form-element {
     display: flex;
     flex-direction: column;

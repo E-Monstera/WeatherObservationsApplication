@@ -9,9 +9,8 @@ const GetWeather = async (location) =>
         let responseData = await response.json();
         errorMessage = responseData.errorMessage;
         data = responseData.data;
-        console.log(`Data in GetWeather: ${data}`);
     } catch (e) {
-        console.log(`Error in Get Weather: ${e.Message}`)
+        return {data: null, errorMessage: `Error retrieving data from the server. Error Message: ${e.Message}`}
     }
 
     return {data, errorMessage}
