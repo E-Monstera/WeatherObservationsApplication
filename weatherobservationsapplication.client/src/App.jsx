@@ -99,7 +99,7 @@ function App() {
                                 <tr key={data.date}>
                                     <td className='weather-text'>{formatDate(data.date)}</td>
                                     <td className='weather-text'>{data.highTemperature}</td>
-                                    <td className= 'weather-text' >{data.lowTemperature}</td>
+                                    <td className='weather-text' >{data.lowTemperature}</td>
                                 </tr>
                             ))}
                     </tbody>

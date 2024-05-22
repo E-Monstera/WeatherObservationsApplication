@@ -71,8 +71,6 @@ namespace WeatherObservationsApplication.Server.Services
             }
         }
 
-
-
         //Method to get the station based on the location
         //I could not find the API on Weather.Gov for finding the coordinates, which are then used to grab the station.
         //With more time, a good interim approach would be to use another API to grab the coordinates of the provided location
